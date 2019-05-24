@@ -5,7 +5,7 @@ Referências: 	http://ces33.wikidot.com/relas:misael-barbeiro
 COMO EXECUTAR:  1º possuir todas as bibliotecas necessárias;
                 2º abrir terminal linux;
                 3º gere o executável: gcc algoritimo_do_barbeiro.c -o algoritimo_do_barbeiro -pthread
-                4º execute e seja feliz: ./algoritimo_do_barbeiro.c
+                4º execute e seja feliz: ./algoritimo_do_barbeiro
 */
 
 #include <stdio.h>
