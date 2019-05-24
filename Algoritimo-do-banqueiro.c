@@ -1,3 +1,11 @@
+/*Por Débora Bianca Taveira de Moura
+O Código foi encontrado no site referenciado abaixo
+Referências: 	https://www.thecrazyprogrammer.com/2016/07/bankers-algorithm-in-c.html
+COMO EXECUTAR:  1º possuir todas as bibliotecas necessárias;
+                2º abrir terminal linux;
+                3º gere o executável: gcc Algoritimo-do-banqueiro.c -o Algoritimo-do-banqueiro -pthread
+                4º execute e seja feliz: ./Algoritimo-do-banqueiro
+*/
 #include <stdio.h>
 
 int current[5][5], maximum_claim[5][5], available[5];
