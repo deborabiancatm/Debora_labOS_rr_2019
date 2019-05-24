@@ -4,16 +4,16 @@ Referências: 	http://ces33.wikidot.com/relas:misael-barbeiro
                 http://ces33.blogspot.com/2009/05/o-problema-do-barbeiro-dorminhoco-com_07.html
 COMO EXECUTAR:  1º possuir todas as bibliotecas necessárias;
                 2º abrir terminal linux;
-                3º gere o executável: gcc barbeiro.c -o barbeiro pthread
-                4º execute e seja feliz: ./barbeiro
+                3º gere o executável: gcc algoritimo_do_barbeiro.c -o algoritimo_do_barbeiro -pthread
+                4º execute e seja feliz: ./algoritimo_do_barbeiro.c
 */
 
-#include "stdio.h"
-#include "unistd.h"
-#include "stdlib.h"
-#include "stdio.h"
-#include "pthread.h"
-#include "semaphore.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <pthread.h>
+#include <semaphore.h>
 
 #define CADEIRAS 3                /* número de cadeiras*/
 #define TRUE 1
@@ -22,6 +22,15 @@ sem_t customers;                /* clientes esperando de atendimento */
 sem_t barbers;                  /* número de barbeiros à espera de clientes */
 sem_t mutex;                    /* para exclusão mútua */
 int waiting = 0;                /* clientes que estão esperando (não estão cortando) */
+
+void* barber(void *arg);
+void* customer(void *arg);
+void cut_hair();
+void customer_arrived();
+void get_haircut();
+void giveup_haircut();
+void barber_sleep();
+void barber_wakeup();
 
 void* barber(void *arg) {
 	while(TRUE) {
